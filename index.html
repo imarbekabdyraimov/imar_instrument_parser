@@ -8,7 +8,7 @@
 </head>
 <body>
     <div>
-<input id="search">
+<input id="search" placeholder = 'GBA01250131'>
 <button  onClick="button ()" id="buttonsearch">Поиск</button>
     </div>
 
@@ -16,6 +16,10 @@
         function button () {
             let a = document.getElementById('search');
             let b = a.value;
+            if (b.length !== 11) {
+                alert("Недопустимая длина строки. Должно быть 11 символов.");
+                return;
+            }
             let c = b.slice(0, 3);
             let d = b.slice(3, 5);
             let e = b.slice(5, 11); 
