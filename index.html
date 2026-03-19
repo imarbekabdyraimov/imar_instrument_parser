@@ -37,11 +37,11 @@
              else if (d == '20') f += '-20 летние';
             else f = 'Неверный формат';
 
-            let day = e.slice(0, 2);
+            let day = e.slice(4, 6);
             let month = e.slice(2, 4);
-            let year = "20" + e.slice(4, 6);
+            let year = "20" + e.slice(0, 2);
 
-            let dateFormatted = day + "." + month + "." + year;
+            let dateFormatted = year + "." + month + "." + day;
 
             if (f !== 'Неверный формат') {
                 f += ", дата погашения: " + dateFormatted;
