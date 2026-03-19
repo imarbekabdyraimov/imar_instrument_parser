@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div>
+<input id="search">
+<button  onClick="button ()" id="buttonsearch">Поиск</button>
+    </div>
+
+    <script>
+        function button () {
+            let a = document.getElementById('search');
+            let b = a.value;
+            let c = b.slice(0, 3);
+            let d = b.slice(3, 5);
+            let e = b.slice(5, 11); 
+            let f = '';
+            if (c == 'GBA') f = 'ГКО';
+            else if (c == 'GD') f = 'ГКВ';
+            else f = 'Неверный формат';
+             if (d == '01') f += '-1 летние';
+             else if (d == '02') f += '-2 летние';
+             else if (d == '03') f += '-3 летние';
+             else if (d == '05') f += '-5 летние';
+             else if (d == '07') f += '-7 летние';
+             else if (d == '10') f += '-10 летние';
+             else if (d == '15') f += '-15 летние';
+             else if (d == '20') f += '-20 летние';
+            else f = 'Неверный формат';
+
+            let day = e.slice(0, 2);
+            let month = e.slice(2, 4);
+            let year = "20" + e.slice(4, 6);
+
+            let dateFormatted = day + "." + month + "." + year;
+
+            if (f !== 'Неверный формат') {
+                f += ", дата погашения: " + dateFormatted;
+            }
+
+            alert(f);
+        }
+    </script>
+</body>
+</html>
